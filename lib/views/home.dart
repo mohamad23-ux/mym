@@ -89,7 +89,7 @@ class _homeState extends State<home> {
                                 margin: EdgeInsets.only(bottom: 6),
                                 child: Image.asset('asset/images/splash1.png')),
                             Text(
-                              'تطبيق لإدارة المصاريف  \nالشخصية....',
+                              'تطبيق لإدارة مصاريف\n محلك التجاري   ....',
                               textAlign: TextAlign.center,
                               style: TextStyle(
                                   color: Colors.white,
@@ -113,11 +113,11 @@ class _homeState extends State<home> {
                                 height: 300,
                                 child: Image.asset('asset/images/splash4.png')),
                             Text(
-                              'يمكنك هذا التطبيق \nمن تنظيم مصروفك الشخصي\n بشكل احترافي ومثالي',
+                              'راقب ونظم تجارتك بسهولة',
                               textAlign: TextAlign.center,
                               style: TextStyle(
                                   color: Colors.white,
-                                  fontSize: 25,
+                                  fontSize: 35,
                                   fontFamily: 'main'),
                             ),
                             // SizedBox(
@@ -128,16 +128,13 @@ class _homeState extends State<home> {
                         ),
                         Column(
                           children: [
-                            SizedBox(
-                              height: 50,
-                            ),
                             Container(
                                 width: 400,
-                                height: 300,
-                                margin: EdgeInsets.only(bottom: 29),
+                                height: 320,
+                                margin: EdgeInsets.only(bottom: 19),
                                 child: Image.asset('asset/images/splash3.png')),
                             Text(
-                              'تطبيق لإدارة المصاريف  \nالشخصية....',
+                              'تطبيق لإدارة أموالك باحترافية  \nالشخصية....',
                               textAlign: TextAlign.center,
                               style: TextStyle(
                                   color: Colors.white,
@@ -145,7 +142,7 @@ class _homeState extends State<home> {
                                   fontFamily: 'main'),
                             ),
                             SizedBox(
-                              height: 19,
+                              height: 9,
                             ),
                             InkWell(
                               onTap: () {

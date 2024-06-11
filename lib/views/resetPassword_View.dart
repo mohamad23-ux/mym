@@ -53,6 +53,7 @@ class resetpasswordView extends StatelessWidget {
                     ),
                   ),
                   Container(
+                    margin: EdgeInsets.all(19),
                     width: 350,
                     child: TextField(
                       style: TextStyle(fontFamily: 'main'),
@@ -76,7 +77,7 @@ class resetpasswordView extends StatelessWidget {
                     ),
                   ),
                   Container(
-                    margin: EdgeInsets.all(20),
+                    margin: EdgeInsets.all(19),
                     width: 350,
                     child: TextField(
                       style: TextStyle(fontFamily: 'main'),

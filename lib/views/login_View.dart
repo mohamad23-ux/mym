@@ -4,11 +4,17 @@ import 'package:mym/maincolor.dart';
 import 'package:mym/views/resetPassword_View.dart';
 import 'package:mym/views/signin_View.dart';
 
-class login extends StatelessWidget {
+class login extends StatefulWidget {
   const login({super.key});
 
   @override
+  State<login> createState() => _loginState();
+}
+
+class _loginState extends State<login> {
+  @override
   Widget build(BuildContext context) {
+    bool obscureTextnow = true;
     return Scaffold(
       resizeToAvoidBottomInset: true,
       backgroundColor: maincolor,
@@ -16,32 +22,25 @@ class login extends StatelessWidget {
         alignment: Alignment.bottomCenter,
         children: [
           Container(
+              margin: EdgeInsets.all(20),
               width: double.infinity,
               height: double.infinity,
               color: maincolor,
               child: SingleChildScrollView(
-                child: Column(
-                  children: [
-                    SizedBox(
-                      height: 175,
-                    ),
-                    Container(
-                      alignment: Alignment.bottomCenter,
-                      child: Text(
-                        'أهــلاً بعودتك ',
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 49,
-                            fontFamily: 'main'),
-                      ),
-                    ),
-                  ],
+                child: Container(
+                  margin: EdgeInsets.all(12),
+                  alignment: Alignment.center,
+                  child: Text(
+                    'أهلاً وسهلاً',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                        color: Colors.white, fontSize: 49, fontFamily: 'main'),
+                  ),
                 ),
               )),
           SingleChildScrollView(
             child: Container(
-              height: 650,
+              height: 600,
               width: double.infinity,
               decoration: BoxDecoration(
                 color:
@@ -53,6 +52,7 @@ class login extends StatelessWidget {
                 // إضافة الظل إذا أردت
               ),
               child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Container(
                     margin: EdgeInsets.all(25),
@@ -63,6 +63,7 @@ class login extends StatelessWidget {
                     ),
                   ),
                   Container(
+                    margin: EdgeInsets.only(top: 20, left: 20, right: 20),
                     width: 350,
                     child: TextField(
                       style: TextStyle(fontFamily: 'main'),
@@ -89,31 +90,44 @@ class login extends StatelessWidget {
                     margin: EdgeInsets.all(20),
                     width: 350,
                     child: TextField(
+                      obscureText: obscureTextnow,
+                      keyboardType: TextInputType.none,
                       style: TextStyle(fontFamily: 'main'),
-                      textDirection: TextDirection
-                          .rtl, // تحديد اتجاه النص من اليمين لليسار
+                      textDirection: TextDirection.rtl,
                       textAlign: TextAlign.right,
                       decoration: InputDecoration(
                         enabledBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(20),
-                            borderSide: BorderSide(color: maincolor)),
+                          borderRadius: BorderRadius.circular(20),
+                          borderSide: BorderSide(color: maincolor),
+                        ),
                         labelText: 'كلمة السر',
+                        suffixIcon: IconButton(
+                          icon: Icon(obscureTextnow
+                              ? Icons.visibility
+                              : Icons.visibility_off), // تبديل الأيقونة
+                          onPressed: () {
+                            setState(() {
+                              obscureTextnow =
+                                  !obscureTextnow; // تغيير حالة الإظهار/الإخفاء
+                            });
+                          },
+                        ),
                         labelStyle: TextStyle(
                           fontFamily: 'main',
                         ),
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.only(
-                              topLeft: Radius.circular(18),
-                              bottomRight: Radius.circular(25),
-                              bottomLeft: Radius.circular(25),
-                              topRight: Radius.circular(25)),
+                            topLeft: Radius.circular(18),
+                            bottomRight: Radius.circular(25),
+                            bottomLeft: Radius.circular(25),
+                            topRight: Radius.circular(25),
+                          ),
                         ),
                       ),
                     ),
                   ),
                   Container(
-                    alignment: Alignment.centerRight,
-                    margin: EdgeInsets.only(top: 12, right: 40),
+                    margin: EdgeInsets.all(25),
                     child: Text(
                       'هل نسيت كلمة السر ؟ ',
                       textAlign: TextAlign.center,

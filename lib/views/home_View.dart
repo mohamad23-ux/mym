@@ -37,3 +37,13 @@ Widget TextFile(String text) {
     ),
   );
 }
+
+///////
+///Controllers of سند الدفع 
+///1-paymentVouchermoney,
+///2-paymentVoucherKind,
+///3-paymentVouchertype,
+//////Controllers of سند القبض 
+///1-recVouchermoney,
+///2-recmentVoucherKind,
+///3-recmentVouchertype,
